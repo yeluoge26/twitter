@@ -1,0 +1,50 @@
+lvmaoshetuite
+
+
+ crawling lvmaoshetuite 
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/pyquery/pyquery.py", line 95, in fromstring
+    result = getattr(etree, meth)(context)
+  File "src/lxml/etree.pyx", line 3234, in lxml.etree.fromstring
+  File "src/lxml/parser.pxi", line 1876, in lxml.etree._parseMemoryDocument
+  File "src/lxml/parser.pxi", line 1757, in lxml.etree._parseDoc
+  File "src/lxml/parser.pxi", line 1068, in lxml.etree._BaseParser._parseUnicodeDoc
+  File "src/lxml/parser.pxi", line 601, in lxml.etree._ParserContext._handleParseResultDoc
+  File "src/lxml/parser.pxi", line 711, in lxml.etree._handleParseResult
+  File "src/lxml/parser.pxi", line 640, in lxml.etree._raiseParseError
+  File "<string>", line 1
+lxml.etree.XMLSyntaxError: attributes construct error, line 1, column 104
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "run.py", line 110, in <module>
+    main()
+  File "run.py", line 106, in main
+    get_all_posts(username)
+  File "run.py", line 68, in get_all_posts
+    p_post_list = [tweet for tweet in p_post]
+  File "run.py", line 68, in <listcomp>
+    p_post_list = [tweet for tweet in p_post]
+  File "/root/twitter928/twitter_fetch/modules/tweets.py", line 134, in get_tweets
+    yield from gen_tweets(pages)
+  File "/root/twitter928/twitter_fetch/modules/tweets.py", line 39, in gen_tweets
+    url='bunk', default_encoding='utf-8')
+  File "/usr/local/lib/python3.6/site-packages/requests_html.py", line 421, in __init__
+    element=PyQuery(html)('html') or PyQuery(f'<html>{html}</html>')('html'),
+  File "/usr/local/lib/python3.6/site-packages/pyquery/pyquery.py", line 255, in __init__
+    elements = fromstring(context, self.parser)
+  File "/usr/local/lib/python3.6/site-packages/pyquery/pyquery.py", line 99, in fromstring
+    result = getattr(lxml.html, meth)(context)
+  File "/usr/local/lib64/python3.6/site-packages/lxml/html/__init__.py", line 875, in fromstring
+    doc = document_fromstring(html, parser=parser, base_url=base_url, **kw)
+  File "/usr/local/lib64/python3.6/site-packages/lxml/html/__init__.py", line 761, in document_fromstring
+    value = etree.fromstring(html, parser, **kw)
+  File "src/lxml/etree.pyx", line 3235, in lxml.etree.fromstring
+  File "src/lxml/etree.pyx", line 362, in lxml.etree._Document.getroot
+  File "src/lxml/etree.pyx", line 1611, in lxml.etree._elementFactory
+  File "src/lxml/classlookup.pxi", line 403, in lxml.etree._parser_class_lookup
+  File "src/lxml/classlookup.pxi", line 456, in lxml.etree._custom_class_lookup
+  File "/usr/local/lib64/python3.6/site-packages/lxml/html/__init__.py", line 735, in lookup
+    def lookup(self, node_type, document, namespace, name):
+KeyboardInterrupt
